@@ -1,3 +1,6 @@
+body, input, select, button {
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+
 .calender {
   display: block;
   width: 320px;

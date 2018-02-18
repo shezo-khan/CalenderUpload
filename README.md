@@ -1,0 +1,3 @@
+For SCSS 
+
+npm install

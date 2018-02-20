@@ -1,131 +1,150 @@
-body, input, select, button {
-  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: 'icomoon';
+  src:url('/font/icomoon.eot');
+  src:url('/font/icomoon.eot') format('embedded-opentype'),
+  url('/font/icomoon.woff') format('woff'),
+  url('/font/icomoon.ttf') format('truetype'),
+  url('/font/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-.calender{
-  display: block;
-  width: 320px;
-  float: left;
-  margin: 8px;
 
-  &__header{
-    background-color: #003580;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 4px;
-    padding: 3px;
-    height: 36px;
-    line-height: 36px;
-    position: relative;
-    text-align: center;
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-    &-label{
-      font-size: 16px;
-      line-height: 24px;
-      background: none;
-      padding: 6px 4px;
-      display: inline-block;
-      *display: inline;
-      position: relative;
-      z-index: 9999;
-      overflow: hidden;
-      margin: 0;
-      font-weight: bold;
-    }
-
-    &-prev,&-next{
-      display: block;
-      cursor: pointer;
-      outline: 0;
-      padding: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: 75% 75%;
-      *position: absolute;
-      *top: 0;
-      background: #07c;
-      border: 3px solid #fff;
-      -webkit-box-shadow: 1px 1px 2px #999;
-      box-shadow: 1px 1px 2px #999;
-      color: #fff;
-      height: auto;
-      width: 40px;
-      text-indent: 0;
-      opacity: 1;
-      position: absolute;
-      top: 3px;
-      margin: 0;
-      -webkit-box-sizing: content-box;
-      -moz-box-sizing: content-box;
-      box-sizing: content-box;
-      font-size: 24px;
-      line-height: 30px;
-      font-weight: 700;
-    }
-    &-prev{
-      left: 5px;
-      right: auto;
-      border-radius: 6px 0 0 6px;
-      float: left;
-    }
-    &-next{
-      left: auto;
-      right: 5px;
-      border-radius: 0 6px 6px 0;
-      float: right;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{
+  margin: 0;
+}
+.listing{
+  display: grid;
+  grid-template-columns: 150px auto auto;
+  grid-template-rows: auto;
+  font-family: 'Open Sans',sans-serif!important;
+  list-style: none;
+  margin: 0 10px;
+  grid-column-gap: 10px;
+  &__image{
+    &-container{
+      grid-column: 1/2;
+      grid-row:1/6;
+      justify-self: center;
     }
   }
-
-  &__table{
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: 0;
-    td,th{
-      width: 14.285714285714286%;
-      padding: 0;
-    }
-    td{
-      padding: 1px;
-    }
-    th {
-      color: #212121;
-      font-size: 14px;
-      line-height: 33px;
-      font-weight: bold;
-      text-align: center;
-    }
-    .is-selected{
-      button{
-        color: #fff;
-        background: #07c;
-        border-radius: 0;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        font-weight: normal;
+  &__title{
+    grid-column: 2/4;
+    grid-row:1/2;
+    margin: 0;
+    font-size: 18px;
+    align-self: center;
+  }
+  &__stars{
+    grid-column: 2/3;
+    grid-row:2/3;
+    align-self: center;
+  }
+  &__feedback{
+    grid-column: 3/4;
+    grid-row:2/3;
+    align-self: center;
+    &-like{
+      &:before{
+        content: "\f004";
+        font-family: 'icomoon';
       }
     }
-  }
+    &-cup{
 
-  &__button{
-    cursor: pointer;
-    display: block;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: 0;
-    margin: 0;
-    width: 100%;
-    padding: 5px;
-    line-height: 15px;
-    border: 1px solid #d2d2d2;
-    background-color: #e9f0fa;
-    color: #545454;
-    font-size: 14px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    &-map{
+
+    }
   }
+  &__address{
+    grid-column: 2/3;
+    grid-row:3/4;
+    font-size: 12px;
+  }
+  &__rating{
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  &__details{
+    grid-column: 3/4;
+    grid-row: 3/5;
+    font-size: 12px;
+    align-self: flex-start;
+    &-service{
+      line-height: 10px;
+    }
+    &-price{
+      line-height: 10px;
+    }
+  }
+  &__bestfeature{
+    grid-column: 3/4;
+    grid-row: 5/6;
+    font-size: 14px;
+  }
+  &__features{
+    grid-column: 1/2;
+    grid-row: 6/7;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__type{
+    grid-column: 2/3;
+    grid-row: 6/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+  }
+  &__button{
+    grid-column: 3/4;
+    grid-row: 6/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+      border:1px solid black;
+    }
+  }
+  &__sale{
+
+  }
+}
+@font-face {
+  font-family: 'icomoon';
+  src:url('/font/icomoon.eot');
+  src:url('/font/icomoon.eot') format('embedded-opentype'),
+  url('/font/icomoon.woff') format('woff'),
+  url('/font/icomoon.ttf') format('truetype'),
+  url('/font/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
